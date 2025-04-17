@@ -1,0 +1,25 @@
+services:
+  app:
+    build: ./app
+    container_name: app-container
+    volumes:
+      - ./app:/app
+      - ./uploads:/app/uploads  
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./app/.env
+    command: sh -c "npx prisma generate && npm run dev"
+    depends_on:
+      - db
+    networks:
+      - appnet
+
+  db:
+    external: true
+
+networks:
+  appnet:
+    external: true
+
