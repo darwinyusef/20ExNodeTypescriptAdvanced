@@ -1,0 +1,17 @@
+{
+  "name": "kafkaprv1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "producer": "node src/producer_old.js",
+    "consumer": "node src/consumer_old.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kafka-node": "^5.0.0",
+    "kafkajs": "^2.2.4"
+  }
+}
